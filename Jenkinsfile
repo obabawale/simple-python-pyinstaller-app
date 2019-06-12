@@ -37,6 +37,7 @@ pipeline {
             steps {
                 sh 'pyinstaller --onefile sources/add2vals.py'
                 sh 'echo `$pwd`'
+                sh 'echo `Hello, world`'
             }
             post {
                 success {
