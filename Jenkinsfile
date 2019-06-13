@@ -39,7 +39,7 @@ pipeline {
             }
             post {
                 success {
-                    sh 'echo "Im deploying here..."'
+                    sh 'echo "Im deploying here... added ssh key to remote server"'
                     sh 'ssh root@128.199.133.72 && cd /opt && chmod a+x add2vals_final'
                     archiveArtifacts 'dist/add2vals' 
                 }
