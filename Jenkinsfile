@@ -39,6 +39,7 @@ pipeline {
             }
             post {
                 success {
+                    sh 'echo "Im deploying here..."'
                     sh 'ssh root@128.199.133.72 && cd /opt && chmod a+x add2vals_final'
                     archiveArtifacts 'dist/add2vals' 
                 }
