@@ -36,11 +36,11 @@ pipeline {
             }
             steps {
                 sh 'pyinstaller --onefile sources/add2vals.py'
-                sh 'echo "The final stage"'
-                sh 'echo "$HOME"'
             }
             post {
                 success {
+                    sh 'scp dist/add2vals jenkins:/opt/add2vals_final'
+                    sh 'ssh jenkins && cd /opt && chmod a+x add2vals_final'
                     archiveArtifacts 'dist/add2vals' 
                 }
             }
