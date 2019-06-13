@@ -49,6 +49,9 @@ pipeline {
         }
 
         stage('Deploy') {
+            agent {
+                label 'master'
+            }
             steps {
                 sh 'echo `whoami`'
                 sh 'echo `hostname`'
