@@ -50,6 +50,7 @@ pipeline {
             }
             steps {
                 sh 'echo "Im good"'
+                sh 'echo `whoami`'
             }
         }
     }
