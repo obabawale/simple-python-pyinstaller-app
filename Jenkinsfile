@@ -49,7 +49,6 @@ pipeline {
         }
 
         stage('Deploy') {
-            agent none
             steps {
                 sh 'echo `whoami`'
                 sh 'echo `hostname`'
