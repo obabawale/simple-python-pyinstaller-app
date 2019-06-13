@@ -41,6 +41,7 @@ pipeline {
                 success {
                     sh 'echo "Im deploying here... added ssh key to remote server"'
                     sh 'cd ~ && touch sample.txt'
+                    sh 'echo `$whoami` && echo `$pwd`'
                     //sh 'ssh root@128.199.133.72 && cd /opt && chmod a+x add2vals_final'
                     archiveArtifacts 'dist/add2vals' 
                 }
