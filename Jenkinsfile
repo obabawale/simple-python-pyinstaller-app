@@ -39,8 +39,7 @@ pipeline {
             }
             post {
                 success {
-                    sh 'scp dist/add2vals jenkins:/opt/add2vals_final'
-                    sh 'ssh jenkins && cd /opt && chmod a+x add2vals_final'
+                    sh 'ssh root@128.199.133.72 && cd /opt && chmod a+x add2vals_final'
                     archiveArtifacts 'dist/add2vals' 
                 }
             }
