@@ -36,6 +36,8 @@ pipeline {
             }
             steps {
                 sh 'pyinstaller --onefile sources/add2vals.py'
+                sh 'echo "The final stage"'
+                sh 'echo "$HOME"'
             }
             post {
                 success {
