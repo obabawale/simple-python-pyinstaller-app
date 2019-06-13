@@ -1,5 +1,8 @@
 pipeline {
     agent none 
+    options {
+        skipStagesAfterUnstable()
+    }
     stages {
         stage('Build') { 
             agent {
@@ -49,6 +52,7 @@ pipeline {
                 label 'master'
             }
             steps {
+
                 sh 'echo "Im good"'
                 sh 'echo `whoami`'
             }
