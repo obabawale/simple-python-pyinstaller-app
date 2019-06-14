@@ -53,8 +53,6 @@ pipeline {
             }
             steps {
                 sh 'rsync -azPve ssh /var/jenkins_home/workspace/simple-python-pyinstaller-app jenk:/opt'
-                sh 'echo "Im good"'
-                sh 'echo `whoami`'
             }
         }
     }
