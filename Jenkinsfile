@@ -49,7 +49,7 @@ pipeline {
                 label 'master'
             }
             steps {
-                sh 'ssh myremote && cd /var/www/myproject && git pull -f origin master'
+                sh 'echo `whoami`'
             }
         }
     }
