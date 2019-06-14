@@ -14,7 +14,6 @@ pipeline {
                 sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
             }
         }
-
         stage('Test') {
             agent {
                 docker {
@@ -30,7 +29,6 @@ pipeline {
                 }
             }
         }
-
         stage('Deliver') { 
             agent {
                 docker {
@@ -46,13 +44,12 @@ pipeline {
                 }
             }
         }
-
         stage('Deploy') {
             agent {
                 label 'master'
             }
             steps {
-                sh 'rsync -azPve ssh /var/jenkins_home/workspace/simple-python-pyinstaller-app jenk:/opt'
+                sh 'ssh myremote && cd /var/www/myproject && git pull -f origin master'
             }
         }
     }
