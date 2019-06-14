@@ -49,7 +49,7 @@ pipeline {
                 label 'master'
             }
             steps {
-                sh 'echo `whoami`'
+                sh 'echo `whoami` && echo `hostname`'
             }
         }
     }
